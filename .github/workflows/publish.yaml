@@ -5,14 +5,22 @@ on:
     branches: [main]
 
 jobs:
-  build:
+  publish:
     runs-on: ubuntu-latest
     permissions:
       contents: read
       packages: write
     strategy:
       matrix:
-        module: [crossplane-provider-aws-s3]
+        module:
+          - crossplane-provider-aws-ec2
+          - crossplane-provider-aws-ecr
+          - crossplane-provider-aws-iam
+          - crossplane-provider-aws-kms
+          - crossplane-provider-aws-opensearch
+          - crossplane-provider-aws-rds
+          - crossplane-provider-aws-s3
+          - crossplane-provider-aws-secretsmanager
     steps:
       - name: Checkout
         uses: actions/checkout@v2
