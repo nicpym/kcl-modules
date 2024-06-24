@@ -18,5 +18,7 @@ jobs:
         run: go install kcl-lang.io/cli/cmd/kcl@latest
       - name: Login to ghcr.io
         run: kcl registry login ghcr.io --username ${{ github.actor }} --password ${{ secrets.GITHUB_TOKEN }}
+        working-directory: ./crossplane-provider-aws-s3
       - name: Publish to ghcr.io
         run: kcl mod push oci://ghcr.io/nicpym/kcl-modules
+        working-directory: ./crossplane-provider-aws-s3
