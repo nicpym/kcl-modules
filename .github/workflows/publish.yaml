@@ -23,5 +23,5 @@ jobs:
         run: kcl registry login ghcr.io --username ${{ github.actor }} --password ${{ secrets.GITHUB_TOKEN }}
         working-directory: ./crossplane-provider-aws-s3
       - name: Publish to ghcr.io
-        run: kcl mod push oci://ghcr.io/nicpym/kcl-modules
+        run: kcl mod push oci://ghcr.io/nicpym/kcl-modules/crossplane-provider-aws-s3
         working-directory: ./crossplane-provider-aws-s3
